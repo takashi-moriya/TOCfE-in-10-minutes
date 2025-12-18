@@ -22,7 +22,7 @@ jobs:
       run: npm ci
     
     - name: Build slides
-      run: npm run build
+      run: mkdir -p output && npm run build && mv ./slides.html ./output/slides.html
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
@@ -32,7 +32,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        path: './slides.html'
+        path: './output/slides.html'
 
     - name: Deploy to GitHub Pages
       id: deployment
