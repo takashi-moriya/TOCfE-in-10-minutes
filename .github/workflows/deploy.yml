@@ -22,7 +22,7 @@ jobs:
       run: npm ci
     
     - name: Build slides
-      run: mkdir -p output && npm run build && mv ./slides.html ./output/slides.html
+      run: npm run build
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
